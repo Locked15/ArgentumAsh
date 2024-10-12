@@ -1,0 +1,14 @@
+name: argentum-ash
+services:
+  app:
+    container_name: argentum-ash
+    build:
+      context: ..
+      dockerfile: docker/DockerFile
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+     - ..:/app
+    environment:
+      - NODE_ENV=production
